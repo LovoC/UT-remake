@@ -105,7 +105,7 @@ function applyCardTransform(card, relativePos, isCenter) {
     const description = card.querySelector('.character-description');
 
     if (isCenter) {
-        scale = 1.3;
+        scale = 1.35;
         translateZ = 50;
         rotateY = 0;
         opacity = 1;
@@ -113,7 +113,21 @@ function applyCardTransform(card, relativePos, isCenter) {
 
         if (description) {
             description.style.opacity = '1';
-            description.style.maxHeight = '100px';
+            description.style.maxHeight = '150px';
+
+            if (!description.scrollInterval) {
+                description.scrollTop = 0;
+
+                setTimeout(() => {
+                    description.scrollInterval = setInterval(() => {
+                        if (description.scrollTop < description.scrollHeight - description.clientHeight) {
+                            description.scrollTop += 0.5;
+                        } else {
+                            description.scrollTop = 0;
+                        }
+                    }, 30);
+                }, 700);
+            }
         }
     } else {
         if (Math.abs(relativePos) === 1) {
@@ -131,6 +145,11 @@ function applyCardTransform(card, relativePos, isCenter) {
         }
 
         if (description) {
+            if (description.scrollInterval) {
+                clearInterval(description.scrollInterval);
+                description.scrollInterval = null;
+            }
+            description.scrollTop = 0;
             description.style.opacity = '0';
             description.style.maxHeight = '0';
         }
@@ -182,3 +201,155 @@ function stopAutoRotate() {
 
 window.addEventListener('load', initCarousel);
 window.addEventListener('resize', updateCarousel);
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        moveCarousel(-1);
+    } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        moveCarousel(1);
+    }
+});
+
+// Add smooth section transitions
+document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Add a subtle scale animation on click
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            button.style.transform = '';
+        }, 150);
+    });
+});
+
+// Add hover sound effect simulation (visual feedback)
+document.querySelectorAll('.dot').forEach(dot => {
+    dot.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.3)';
+    });
+    dot.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+            this.style.transform = 'scale(1)';
+        }
+    });
+});
+
+// Enhanced carousel interaction - swipe detection for touch devices
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carouselElement = document.querySelector('.carousel');
+
+if (carouselElement) {
+    carouselElement.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselElement.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - go to next
+            moveCarousel(1);
+        } else {
+            // Swipe right - go to previous
+            moveCarousel(-1);
+        }
+    }
+}
+
+// Add parallax effect to title on scroll
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const title = document.querySelector('.title');
+    if (title) {
+        title.style.transform = `translateY(${scrolled * 0.5}px)`;
+        title.style.opacity = Math.max(0, 1 - scrolled / 400);
+    }
+});
+
+// Animate sections when they come into view
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+        }
+    });
+}, observerOptions);
+
+// Add animation for sections
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Observe sections for animation
+document.querySelectorAll('.Section').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Interactive feature cards for Overview section
+document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const wasExpanded = this.classList.contains('expanded');
+
+        document.querySelectorAll('.feature-card').forEach(c => {
+            c.classList.remove('expanded');
+        });
+
+        if (!wasExpanded) {
+            this.classList.add('expanded');
+        }
+    });
+});
+
+// Toggle route cards for Gameplay section
+function toggleRouteCard(card) {
+    const wasExpanded = card.classList.contains('expanded');
+
+    document.querySelectorAll('.route-card').forEach(c => {
+        c.classList.remove('expanded');
+    });
+
+    if (!wasExpanded) {
+        card.classList.add('expanded');
+    }
+}
+
+// Toggle timeline items for Story section
+function toggleTimelineItem(item) {
+    const wasExpanded = item.classList.contains('expanded');
+
+    document.querySelectorAll('.timeline-item').forEach(i => {
+        i.classList.remove('expanded');
+    });
+
+    if (!wasExpanded) {
+        item.classList.add('expanded');
+    }
+}
