@@ -7,6 +7,7 @@
         Alpha 0.1
     </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="interactive.css">
 
 </head>
 
@@ -42,31 +43,46 @@
                         <p>
                             Undertale is an indie RPG created by Toby Fox, released in 2015.
                             The game follows a human who falls into the Underground, a hidden world
-                            inhabited by monsters who were sealed away from the surface long ago. <br><br>
-
-                            Unlike traditional RPGs, Undertale allows players to choose how they
-                            interact with the world around them. Battles are not limited to defeating
-                            enemies, as players can use the ACT menu to understand monsters, solve
-                            conflicts, and discover peaceful solutions.<br><br>
-                    
-                            The combat system combines classic turn-based RPG mechanics with bullet-hell
-                            gameplay, where the player must control a small SOUL and avoid enemy attacks.
-                            Every encounter is designed to reveal something about the characters and
-                            the world they live in.<br><br>
-
-                            Throughout the journey, the player's choices influence the events that occur,
-                            changing the relationships with characters, the dialogue, and the final outcome
-                            of the adventure. Every action can have consequences, making each playthrough
-                            feel different. <br><br>
-                            Undertale is known for its memorable characters, unique humor, emotional
-                            storytelling, and the way it challenges traditional ideas about RPGs. The game
-                            encourages players to think about their decisions and the impact they have on
-                            the world.<br><br>
-                            This website is a guide designed to explore the world of Undertale, including
-                            its characters, gameplay mechanics, routes, and story. More sections will be
-                            added as development continues.
+                            inhabited by monsters who were sealed away from the surface long ago.
                         </p>
-                        <img src="Undertale.jpg" alt="Undertale" class="main_image">
+
+                        <div class="feature-grid">
+                            <div class="feature-card" data-feature="choices">
+                                <div class="feature-icon">⚔️</div>
+                                <h3>Your Choices Matter</h3>
+                                <p>Every decision shapes your journey and relationships with characters.</p>
+                                <div class="feature-detail">
+                                    Unlike traditional RPGs, Undertale allows complete freedom in how you interact with the world. You can choose to fight, show mercy, or find creative solutions to conflicts. These choices have lasting consequences on the story and characters.
+                                </div>
+                            </div>
+
+                            <div class="feature-card" data-feature="combat">
+                                <div class="feature-icon">❤️</div>
+                                <h3>Unique Combat</h3>
+                                <p>Turn-based RPG meets bullet-hell gameplay in creative battles.</p>
+                                <div class="feature-detail">
+                                    The combat system combines classic turn-based mechanics with bullet-hell sequences. Control your SOUL to dodge enemy attacks while choosing to FIGHT, ACT, use ITEMS, or show MERCY. Each encounter reveals something about the characters.
+                                </div>
+                            </div>
+
+                            <div class="feature-card" data-feature="story">
+                                <div class="feature-icon">📖</div>
+                                <h3>Memorable Story</h3>
+                                <p>Experience humor, emotion, and deep themes throughout your journey.</p>
+                                <div class="feature-detail">
+                                    Undertale weaves humor with heartfelt moments and explores themes of friendship, loneliness, determination, and consequences. The game challenges traditional RPG concepts and encourages players to think about their impact on the world.
+                                </div>
+                            </div>
+
+                            <div class="feature-card" data-feature="characters">
+                                <div class="feature-icon">👥</div>
+                                <h3>Unforgettable Characters</h3>
+                                <p>Meet quirky, lovable monsters with unique personalities and stories.</p>
+                                <div class="feature-detail">
+                                    From the skeleton brothers Sans and Papyrus to the determined Undyne and shy Alphys, each character has depth, personality, and their own struggles. Your interactions with them can lead to friendship, rivalry, or something in between.
+                                </div>
+                            </div>
+                        </div>
             </div>
 
             <div id="characters" class="Section">
@@ -94,7 +110,72 @@
                     personalities, roles in the story, and how they are affected by the player's
                     choices.
                 </p>
-                <img src="souls.png" alt="souls" class="main_image">
+
+                <div class="carousel-container">
+                    <h2 class="carousel-title">Meet the Characters</h2>
+                    <div class="carousel">
+                        <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
+                        <div class="carousel-track">
+                            <div class="character-card" data-color="yellow">
+                                <img src="souls.png" alt="Frisk">
+                                <p class="character-name">Frisk</p>
+                                <p class="character-description">A human child who fell into the Underground. Their actions and choices shape the fate of both humans and monsters, as they navigate a world where violence isn't the only option. Silent yet expressive, their red SOUL represents the determination they have in order to continue.</p>
+                            </div>
+                            <div class="character-card" data-color="red">
+                                <img src="souls.png" alt="Chara">
+                                <p class="character-name">Chara</p>
+                                <p class="character-description">The first human to fall into the Underground, adopted by the Dreemurr family. Their mysterious past and tragic fate are intertwined with the Underground's history. Their red SOUL symbolizes determination, but their true nature remains one of the game's deepest mysteries.</p>
+                            </div>
+                            <div class="character-card" data-color="dark-green">
+                                <img src="souls.png" alt="Flowey">
+                                <p class="character-name">Flowey</p>
+                                <p class="character-description">A sentient golden flower with a twisted smile who greets you at the start of your journey. Seemingly friendly at first, he hides dark intentions and shocking secrets. His famous phrase "In this world, it's kill or be killed" sets a chilling tone for what lies ahead.</p>
+                            </div>
+                            <div class="character-card" data-color="light-purple">
+                                <img src="souls.png" alt="Toriel">
+                                <p class="character-name">Toriel</p>
+                                <p class="character-description">The motherly caretaker of the Ruins who protects fallen humans from the dangers ahead. Once the queen of the Underground, she now lives in isolation, baking pies and solving puzzles. Her kindness masks a deep sadness about the past she cannot change.</p>
+                            </div>
+                            <div class="character-card" data-color="light-blue">
+                                <img src="souls.png" alt="Sans">
+                                <p class="character-name">Sans</p>
+                                <p class="character-description">A lazy skeleton who loves puns, pranks, and hanging out at Grillby's. Despite his carefree attitude, he possesses mysterious knowledge and incredible power. His laid-back demeanor hides a deeper understanding of the world's nature and a tragic awareness of his reality.</p>
+                            </div>
+                            <div class="character-card" data-color="orange">
+                                <img src="souls.png" alt="Papyrus">
+                                <p class="character-name">Papyrus</p>
+                                <p class="character-description">An enthusiastic skeleton who dreams of joining the Royal Guard and making friends. His confidence, cooking skills (especially spaghetti), and elaborate puzzles showcase his determination to prove himself. Despite his bravado, he's incredibly kind-hearted and believes in everyone's potential for good.</p>
+                            </div>
+                            <div class="character-card" data-color="blue">
+                                <img src="souls.png" alt="Undyne">
+                                <p class="character-name">Undyne</p>
+                                <p class="character-description">The fierce captain of the Royal Guard with unwavering determination and loyalty to monsterkind. Her intense personality and incredible strength make her a formidable warrior, but beneath her tough exterior lies a passionate heart. She mentors Papyrus and shares a close friendship with Alphys.</p>
+                            </div>
+                            <div class="character-card" data-color="yellow">
+                                <img src="souls.png" alt="Alphys">
+                                <p class="character-name">Alphys</p>
+                                <p class="character-description">The royal scientist who's obsessed with anime, particularly Mew Mew Kissy Cutie. Shy and socially awkward, she struggles with anxiety and guilt over her past experiments. Despite her insecurities, her scientific genius and genuine care for others shine through, especially in her relationship with Undyne.</p>
+                            </div>
+                            <div class="character-card" data-color="magenta">
+                                <img src="souls.png" alt="Mettaton">
+                                <p class="character-name">Mettaton</p>
+                                <p class="character-description">A glamorous robot entertainer and the Underground's biggest celebrity. Originally built by Alphys, he's a charismatic performer who loves the spotlight and his adoring fans. His shows range from cooking segments to dramatic quiz shows, all designed to captivate his audience—and capture human SOULs.</p>
+                            </div>
+                            <div class="character-card" data-color="dark-yellow">
+                                <img src="souls.png" alt="Asgore">
+                                <p class="character-name">Asgore</p>
+                                <p class="character-description">The gentle king of monsters who tends to his golden flowers in the throne room. Burdened by the weight of his crown and the deaths of his children, he made a terrible vow to free monsterkind by collecting human SOULs. Despite his imposing presence, he's kind, loves tea, and hopes for a peaceful resolution.</p>
+                            </div>
+                            <div class="character-card" data-color="rainbow">
+                                <img src="souls.png" alt="Asriel">
+                                <p class="character-name">Asriel</p>
+                                <p class="character-description">The lost prince of the Underground and son of Asgore and Toriel. His tragic story and the events surrounding his death shaped the entire conflict between humans and monsters. Compassionate and innocent, his fate connects to the deepest secrets of the Underground and the true nature of determination.</p>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
+                    </div>
+                    <div class="carousel-dots"></div>
+                </div>
             </div>
 
             <div id="gameplay" class="Section">
@@ -102,38 +183,70 @@
 
                 <p>
                     Undertale combines traditional RPG elements with unique mechanics that
-                    change how players approach battles.<br><br>
-                    During encounters, players can choose to fight enemies or interact with
-                    them using the ACT menu. Understanding each monster's personality can
-                    allow battles to be completed without violence.<br><br>
-                    The game features a bullet-hell style combat system, where players must
-                    control a small heart and avoid enemy attacks.<br><br>
-                    The player's decisions shape the journey through different routes:<br><br>
+                    change how players approach battles. Your decisions shape the journey through different routes:
                 </p>
 
-                <h3 class="Neutral">Neutral Route</h3>
+                <div class="routes-container">
+                    <div class="route-card neutral-card" onclick="toggleRouteCard(this)">
+                        <div class="route-header">
+                            <h3 class="Neutral">Neutral Route</h3>
+                            <span class="route-toggle">+</span>
+                        </div>
+                        <div class="route-content">
+                            <p>
+                                The Neutral Route is the result of making mixed choices throughout the
+                                game. It happens when you fight some enemies but spare others, leading
+                                to many possible endings based on your specific actions.
+                            </p>
+                            <ul class="route-features">
+                                <li><strong>Multiple Endings:</strong> Over a dozen different outcomes</li>
+                                <li><strong>Natural Playthrough:</strong> Most first-time players experience this</li>
+                                <li><strong>Varied Relationships:</strong> Mixed friendships and conflicts</li>
+                                <li><strong>Phone Calls:</strong> Unique ending calls based on who you spared</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <p>
-                    The Neutral Route is the result of making mixed choices throughout the
-                    game. It can happen when the player fights some enemies but spares others,
-                    leading to many possible endings.<br><br>
-                </p>
+                    <div class="route-card pacifist-card" onclick="toggleRouteCard(this)">
+                        <div class="route-header">
+                            <h3 class="Pacifist">Pacifist Route</h3>
+                            <span class="route-toggle">+</span>
+                        </div>
+                        <div class="route-content">
+                            <p>
+                                The Pacifist Route focuses on showing mercy to every monster and forming
+                                connections with the characters. It reveals the most complete story and
+                                explores the deepest relationships between humans and monsters.
+                            </p>
+                            <ul class="route-features">
+                                <li><strong>True Ending:</strong> The canonical "best" ending</li>
+                                <li><strong>Zero Kills:</strong> Spare every enemy without exception</li>
+                                <li><strong>Befriend Everyone:</strong> Complete friendship sidequests</li>
+                                <li><strong>True Lab:</strong> Unlock hidden areas and secrets</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <h3 class="Pacifist">Pacifist Route</h3>
-
-                <p>
-                    The Pacifist Route focuses on showing mercy to every monster and forming
-                    connections with the characters. It reveals more of the story and
-                    explores the relationships between humans and monsters.<br><br>
-                </p>
-
-                <h3 class="Genocide">Genocide Route</h3>
-
-                <p>
-                    The Genocide Route happens when the player chooses a much darker path,
-                    defeating every enemy in each area. This route changes the world,
-                    characters, and overall tone of the game.
-                </p>
+                    <div class="route-card genocide-card" onclick="toggleRouteCard(this)">
+                        <div class="route-header">
+                            <h3 class="Genocide">Genocide Route</h3>
+                            <span class="route-toggle">+</span>
+                        </div>
+                        <div class="route-content">
+                            <p>
+                                The Genocide Route happens when you choose a much darker path,
+                                systematically defeating every enemy in each area. This route dramatically
+                                changes the world, characters, and overall tone of the game.
+                            </p>
+                            <ul class="route-features">
+                                <li><strong>Complete Extinction:</strong> Exhaust every encounter</li>
+                                <li><strong>Hardest Battles:</strong> Face incredibly difficult boss fights</li>
+                                <li><strong>Permanent Consequences:</strong> Actions affect future playthroughs</li>
+                                <li><strong>Dark Narrative:</strong> Experience the game's darkest story</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="story" class="Section">
@@ -141,97 +254,67 @@
                 <p>
                     The story of Undertale begins when a human falls into the Underground, a
                     hidden world beneath the surface where monsters have been trapped for many
-                    years.<br><br>
-                    Long ago, humans and monsters lived together peacefully. However, after a
-                    conflict between the two races, humans emerged victorious and sealed the
-                    monsters away using a powerful barrier, separating them from the outside
-                    world.<br><br>
-                    As the player explores the Underground, they discover a world filled with
-                    forgotten history, unusual locations, and monsters who each have their own
-                    reasons for wanting to escape.<br><br>
-                    The journey is shaped by the player's decisions. Whether they choose to
-                    show mercy, fight, or take a different path entirely, the story changes
-                    based on their actions and the relationships they create.<br><br>
-                    Behind the humor and charming characters, Undertale explores deeper themes
-                    such as friendship, loneliness, determination, consequences, and the impact
-                    of the choices people make.<br><br>
-                    Every route reveals different parts of the Underground's history and the
-                    truth behind the events that brought humans and monsters to their current
-                    situation.<br><br>
-                    This section will explore the timeline, important events, mysteries, and
-                    the different paths that can be discovered throughout Undertale.
+                    years.
                 </p>
-            </div>
-        </div>
-        <br><br>
 
-        <div class="carousel-container">
-            <h2 class="carousel-title">Meet the Characters</h2>
-            <div class="carousel">
-                <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
-                <div class="carousel-track">
-                    <div class="character-card" data-color="yellow">
-                        <img src="souls.png" alt="Frisk">
-                        <p class="character-name">Frisk</p>
-                        <p class="character-description">The fallen human child with a determined soul.</p>
+                <div class="timeline-container">
+                    <div class="timeline-item" onclick="toggleTimelineItem(this)">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h4>The War</h4>
+                            <p class="timeline-preview">Long ago, humans and monsters lived together peacefully...</p>
+                            <div class="timeline-detail">
+                                <p>Long ago, humans and monsters lived together peacefully. However, after a conflict between the two races, humans emerged victorious and sealed the monsters away using a powerful barrier created by seven human mages, separating them from the outside world forever.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="character-card" data-color="red">
-                        <img src="souls.png" alt="Chara">
-                        <p class="character-name">Chara</p>
-                        <p class="character-description">The first human to fall into the Underground.</p>
+
+                    <div class="timeline-item" onclick="toggleTimelineItem(this)">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h4>The First Human</h4>
+                            <p class="timeline-preview">201X: A human child fell into the Underground...</p>
+                            <div class="timeline-detail">
+                                <p>The first human to fall into the Underground after the war was adopted by the royal family, Asgore and Toriel. This child, later known as Chara, formed a close bond with the king and queen's son, Asriel. Together, they dreamed of freeing monsterkind and seeing the flowers on the surface.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="character-card" data-color="dark-green">
-                        <img src="souls.png" alt="Flowey">
-                        <p class="character-name">Flowey</p>
-                        <p class="character-description">A sentient flower with a sinister smile.</p>
+
+                    <div class="timeline-item" onclick="toggleTimelineItem(this)">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h4>The Tragedy</h4>
+                            <p class="timeline-preview">A plan gone wrong led to the deaths of both children...</p>
+                            <div class="timeline-detail">
+                                <p>Chara became gravely ill and died. Asriel absorbed Chara's SOUL and crossed the barrier to the surface. However, when humans attacked Asriel, he refused to fight back and returned to the Underground, where he died and turned to dust. This tragedy shattered the royal family and changed the Underground forever.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="character-card" data-color="light-purple">
-                        <img src="souls.png" alt="Toriel">
-                        <p class="character-name">Toriel</p>
-                        <p class="character-description">Caretaker of the Ruins and protector of lost souls.</p>
+
+                    <div class="timeline-item" onclick="toggleTimelineItem(this)">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h4>The Decree</h4>
+                            <p class="timeline-preview">Asgore declared war on humanity...</p>
+                            <div class="timeline-detail">
+                                <p>In his grief and rage, King Asgore declared that any human who falls into the Underground would be killed, and their SOUL collected. Seven human SOULs would be needed to break the barrier. Queen Toriel, unable to accept this decree, left Asgore and isolated herself in the Ruins to protect any humans who might fall.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="character-card" data-color="light-blue">
-                        <img src="souls.png" alt="Sans">
-                        <p class="character-name">Sans</p>
-                        <p class="character-description">A laid-back skeleton who enjoys puns and pranks.</p>
-                    </div>
-                    <div class="character-card" data-color="orange">
-                        <img src="souls.png" alt="Papyrus">
-                        <p class="character-name">Papyrus</p>
-                        <p class="character-description">A confident skeleton with dreams of joining the Royal Guard.</p>
-                    </div>
-                    <div class="character-card" data-color="blue">
-                        <img src="souls.png" alt="Undyne">
-                        <p class="character-name">Undyne</p>
-                        <p class="character-description">Captain of the Royal Guard with unwavering determination.</p>
-                    </div>
-                    <div class="character-card" data-color="yellow">
-                        <img src="souls.png" alt="Alphys">
-                        <p class="character-name">Alphys</p>
-                        <p class="character-description">The royal scientist with a passion for anime and technology.</p>
-                    </div>
-                    <div class="character-card" data-color="magenta">
-                        <img src="souls.png" alt="Mettaton">
-                        <p class="character-name">Mettaton</p>
-                        <p class="character-description">A charismatic robot entertainer and Underground celebrity.</p>
-                    </div>
-                    <div class="character-card" data-color="dark-yellow">
-                        <img src="souls.png" alt="Asgore">
-                        <p class="character-name">Asgore</p>
-                        <p class="character-description">King of the Underground seeking freedom for monsters.</p>
-                    </div>
-                    <div class="character-card" data-color="rainbow">
-                        <img src="souls.png" alt="Asriel">
-                        <p class="character-name">Asriel</p>
-                        <p class="character-description">The lost prince with a kind and compassionate heart.</p>
+
+                    <div class="timeline-item" onclick="toggleTimelineItem(this)">
+                        <div class="timeline-marker">5</div>
+                        <div class="timeline-content">
+                            <h4>Your Journey</h4>
+                            <p class="timeline-preview">You fall into the Underground and your story begins...</p>
+                            <div class="timeline-detail">
+                                <p>You arrive in the Underground as the eighth human to fall since the war. The choices you make will determine not only your fate but the fate of all monsters trapped beneath the surface. Will you show mercy and break the cycle of violence, or will you follow a darker path? Every decision matters, and the Underground remembers.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
             </div>
-            <div class="carousel-dots"></div>
         </div>
-
-        <br><br>
 
     </div>
 
